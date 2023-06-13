@@ -1,3 +1,4 @@
+// user.js
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/compat/database";
@@ -45,6 +46,10 @@ export default {
     async logout({ commit }) {
       await firebase.auth().signOut();
       commit("setUser", null);
+      commit("clearInfo");
+    },
+    getUid({ state }) {
+      return state.user ? state.user.uid : null;
     },
   },
   getters: {

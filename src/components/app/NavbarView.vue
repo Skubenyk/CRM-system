@@ -16,7 +16,7 @@
             data-target="dropdown"
             ref="dropdown"
           >
-            USER NAME
+            {{ name }}
             <i class="material-icons right">arrow_drop_down</i>
           </a>
 
@@ -70,6 +70,9 @@ export default {
   computed: {
     formattedDateTime() {
       return this.date.toLocaleString(); // Форматування дати та часу
+    },
+    name() {
+      return this.$store.getters.info.name;
     },
   },
 };
