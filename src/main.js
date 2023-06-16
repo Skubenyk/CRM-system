@@ -2,8 +2,9 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
-import dateFilter from "@/filters/date.filter";
+// import dateFilter from "@/filters/date.filter";
 import messagePlugin from "@/utils/message.plugin";
+import Loader from "@/components/app/LoaderView.vue";
 import "./registerServiceWorker";
 import "materialize-css/dist/js/materialize.min";
 
@@ -33,9 +34,10 @@ firebase.auth().onAuthStateChanged((user) => {
   }
   if (!app) {
     app = createApp(App).use(store).use(router).use(messagePlugin);
-    app.config.globalProperties.$filters = {
-      date: dateFilter,
-    };
+    // app.config.globalProperties.$filters = {
+    //   date: dateFilter,
+    // };
+    app.component("LoaderView", Loader);
     app.mount("#app");
   }
 });
