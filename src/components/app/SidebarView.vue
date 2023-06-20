@@ -8,7 +8,7 @@
       <router-link
         :to="link.url"
         :exact="link.exact"
-        class="waves-effect waves-orange pointer"
+        class="waves-effect waves-yellow darken-3 pointer"
       >
         {{ link.title }}
       </router-link>
