@@ -1,6 +1,7 @@
 import { createStore } from "vuex";
 import auth from "./auth";
 import info from "./info";
+import category from "./category";
 
 export default createStore({
   state: {
@@ -19,11 +20,13 @@ export default createStore({
   },
   actions: {
     async fetchCurrency() {
-      // const key = process.env.VUE_APP_FIXER;
-      const key = process.env.VUE_APP_OPENEXCANGERATES;
+      const key = process.env.VUE_APP_FIXER;
+      //! Problem with API key
+      // const key = process.env.VUE_APP_OPENEXCANGERATES;
       const res = await fetch(
-        // `https://data.fixer.io/api/latest?access_key=${key}&symbols=USD,EUR,UAH`
-        `https://openexchangerates.org/api/latest.json?app_id=${key}&base=EUR&symbols=USD,EUR,UAH`
+        `https://data.fixer.io/api/latest?access_key=${key}&symbols=USD,EUR,UAH`
+        //! Problem with API key
+        // `https://openexchangerates.org/api/latest.json?app_id=${key}&base=EUR&symbols=USD,EUR,UAH`
       );
       return await res.json();
     },
@@ -31,5 +34,6 @@ export default createStore({
   modules: {
     auth,
     info,
+    category,
   },
 });

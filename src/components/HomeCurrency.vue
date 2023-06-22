@@ -18,9 +18,7 @@
             <tr v-for="cur of currencies" :key="cur">
               <td>{{ cur }}</td>
               <td>
-                {{
-                  rates && rates[cur] ? rates[cur].toFixed(4) : "Не визначено"
-                }}
+                {{ rates && rates[cur] ? rates[cur].toFixed(4) : "0.0000" }}
               </td>
               <td>{{ date }}</td>
             </tr>
