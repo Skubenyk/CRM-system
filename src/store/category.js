@@ -10,6 +10,7 @@ export default {
           .database()
           .ref(`/users/${uid}/categories/`)
           .push({ title, limit });
+        console.log("createCategory");
         return { title, limit, id: category.key };
       } catch (error) {
         commit("setError", error);
