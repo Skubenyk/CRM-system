@@ -20,6 +20,9 @@
     "vuelidate": "^0.7.7",
     "vuex": "^4.0.0"
   },
+   "engines": {
+    "node": "22.x"
+  },
   "devDependencies": {
     "@babel/core": "^7.12.16",
     "@babel/eslint-parser": "^7.12.16",
